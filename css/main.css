@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Livvic', sans-serif;
 }
 
 #wrapper {
@@ -86,7 +87,7 @@ html, body {
 
 .overlayRealty {
     position: absolute;
-    margin: -318px 5px;
+    margin: -320px 5px;
     height: 300px;
     width: 300px;
     transition: .5s ease; 
@@ -109,7 +110,7 @@ html, body {
 
 .overlayDesign {
     position: absolute;
-    margin: -318px 5px;
+    margin: -320px 5px;
     height: 300px;
     width: 300px;
     transition: .5s ease;

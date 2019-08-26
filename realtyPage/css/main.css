@@ -1,0 +1,116 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: beige;
+    font-family: 'Livvic', sans-serif;
+}
+
+
+/*  DESKTOP MENU AND NAVIGATION BAR  */
+#navContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.sticky-nav #navContainer {
+    position: sticky;
+    top: 0px;
+}
+
+.nav-inner {
+    background-color: black;
+    border-radius: 50px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 300ms linear;
+}
+
+.nav-properties .nav-inner {
+    background-color: rgba(0, 0, 0, .9);
+    border-radius: 0px;
+    margin: 0px;
+    transition: all 300ms linear;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex: 1 0 40vw;
+}
+
+.menu li {
+    line-height: 45px;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 0 5px;
+    transition: all 300ms linear;
+}
+
+.menu li:hover {
+    transition: all 500ms linear;
+}
+
+.menu li:hover a, #management:hover a, #designReno:hover a {
+    color: aqua;
+}
+
+.menu-left {
+    justify-content: flex-end;
+}
+
+.menu li a {
+    color: tan;
+    font-size: 17.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    flex: 0 1 20vw;
+    text-align: center;
+    margin: 5px 0px;
+}
+
+.navbar-logo img {
+    width: 200px;
+}
+
+#management a {
+    color: coral;
+}
+
+#designReno a {
+    color: white;
+}
+
+
+/*  RESPONSIVE DESKTOP MENU AND NAVIGATION BAR  */
+@media screen and (max-width: 1280px) {
+
+    .menu li a {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+
+    .menu li a {
+        font-size: 12px;
+    }
+}
+
+/*  HIDING DESKTOP MENU AND NAVIGATION BAR FOR MOBILE */
+@media screen and (max-width: 1000px) {
+
+    #navContainer {
+        display: none;
+    }
+}
+
+p {
+    margin: 50px;
+}
