@@ -369,7 +369,7 @@ footer {
 }
 
 .footerwrapper {
-    padding: 0px 50px 0px 50px;
+    padding: 0px 50px;
 }
 
 .footerTop {
@@ -380,7 +380,9 @@ footer {
 .footerTestimonials {
     color: white;
     margin: 0;
-    padding: 50px;
+    padding: 50px 0px;
+    padding-right: 25px;
+    flex-grow: 3;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -411,7 +413,9 @@ footer {
 .footerContactUs {
     color: white;
     margin: 0;
-    padding: 50px 50px 50px 0px;
+    padding: 50px 0px;
+    padding-left: 25px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -564,7 +568,61 @@ footer {
 /*  RESPONSIVE FOOTER FOR MOBILE DEVICES  */
 @media screen and (max-width: 780px) {
 
-    
+    .footerTop {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footerTestimonials {
+        padding: 0 0 10px 0;
+    }
+
+    .footerTestimonials hr {
+        width: 100%;
+    }
+
+    .footerContactUs {
+        padding: 10px 0 0 0;
+    }
+
+    .footerContactUs p {
+        padding-top: 5px;
+    }
+
+    .footerMenu {
+        margin: 0 -50px;
+        padding: 0;
+        font-size: 12.5px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .footerTestimonials h3 {
+        font-size: 20px;
+    }
+
+    .footerTestimonials p {
+        font-size: 12.5px;
+    }
+
+    .footerContactUs h3 {
+        font-size: 20px;
+    }
+
+    .footerContactUs h4 {
+        font-size: 16.5px;
+    }
+
+    .footerContactUs p {
+        font-size: 12.5px;
+    }
+
+    .footerMenu {
+        display: none;
+    }
 }
 /*  RESPONSIVE FOOTER FOR MOBILE DEVICES ~ END  */
 /********  FOOTER ~ END  ************/
