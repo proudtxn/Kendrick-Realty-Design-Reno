@@ -99,18 +99,472 @@ html, body {
 @media screen and (max-width: 1160px) {
 
     .menu li a {
-        font-size: 12px;
+        font-size: 12.5px;
     }
 }
 
-/*  HIDING DESKTOP MENU AND NAVIGATION BAR FOR MOBILE */
+/*  HIDING DESKTOP MENU AND NAVIGATION BAR FOR MOBILE  */
 @media screen and (max-width: 1000px) {
 
     #navContainer {
         display: none;
     }
 }
+/*  HIDING DESKTOP MENU AND NAVIGATION BAR FOR MOBILE ~ END  */
+/*  RESPONSIVE DESKTOP MENU AND NAVIGATION BAR ~ END  */
+/*  DESKTOP MENU AND NAVIGATION BAR ~ END  */
+
+
+
+/*  MOBILE MENU AND NAVIGATION BAR  */
+/*  MOBILE MENU HIDDEN ON DEVICES OF WIDER THAN 1000px's  */
+@media screen and (min-width: 1000px) {
+    #mobileNavContainer {
+        display: none;
+    }
+}
+/*  MOBILE MENU HIDDEN ON DEVICES OF WIDER THAN 1000px's ~ END  */
+
+
+/*  MOBILE MENU ONLY ON DEVICES LESS THAN 1000px's WIDE  */
+@media screen and (max-width: 999px) {
+
+    /*  MOBILE MENU & NAVIGATION BAR  */
+    body {
+        overflow-x: hidden;
+        margin-top: 120px;
+    }
+
+    #mobileNavContainer {
+        background: black;
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        top: 0;
+    }
+
+    .logo a {
+        display: flex;
+        height: 100px;
+    }
+
+    .logo img {
+        margin: auto 0;
+        padding-left: 10px;
+        height: 75px;
+        float: left;
+        
+    }
+
+    .mobileNav {
+        height: 0;
+        width: 0;
+        border-top: 0;
+        border-bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center; /* centers menu content vertically */
+        min-height: 0vh;
+    }
+
+    .mobileNav ul {
+        float: right;
+    }
+
+    .mobileNav ul li {
+        display: inline-block;
+    }
+    
+    .mobileNav ul li a {
+        display: inline-block;
+        outline: none;
+        color: beige;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 17.5px;
+        letter-spacing: 1.2px;
+        font-weight: 600px;
+    }
+
+    .mobileNav ul li a.active {
+        background: 0;
+    }
+
+    .nav-links {
+        position: fixed;
+        margin: 0;
+        right: 0px;
+        height: 100%;  /* height of navbar */
+        width: 100%;  /* width of the navbar background */
+        display: flex;
+        top: 100px;
+        flex-direction: column;
+        text-align: right;
+        background: black;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 50px;
+    }
+
+    .nav-links li {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 10px;
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        padding: 10px 25px;
+        transform: translateX(-20px);
+        transition: all 300ms ease;
+    }
+
+    .nav-links li a:hover, #management a:hover, #designReno a:hover {
+        color: aqua;
+    }
+
+
+    /*  BURGER BTN DESIGN  */
+    .burger {
+        display: block;
+    }
+
+    .nav-btn {
+        position: fixed;
+        right: 20px;
+        top: 25px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        z-index: 9999;
+        border-radius: 50%;
+    }
+
+    .nav-btn i {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: beige;
+        border-radius: 2px;
+        margin-left: 14px;
+    }
+
+    .nav-btn i:nth-child(1) {
+        margin-top: 16px;
+    }
+    .nav-btn i:nth-child(2) {
+        margin-top: 4px;
+        opacity: 1;
+    }
+    .nav-btn i:nth-child(3) {
+        margin-top: 4px;
+    }
+    /*  BURGER BTN DESIGN ~ END  */
+
+
+    /*  ANIMATED NAVIGATION MENU  */
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(-250px);  /* 'a' menu links slide into view */
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);  /* location for 'a' menu links to stop sliding */
+        }
+    }
+    /*  ANIMATED NAVIGATION MENU ~ END  */
+
+
+
+    /*  BURGER ANIMATION EFFECTS  */
+    #nav:checked + .nav-btn {
+        transform: rotate(45deg);
+    }
+
+    #nav:checked + .nav-btn i {
+        transition: transform 0.5s ease;
+    }
+
+    #nav:checked + .nav-btn i:nth-child(1) {
+        transform: translateY(6px) rotate(180deg);
+    }
+
+    #nav:checked + .nav-btn i:nth-child(2) {
+        opacity: 0;
+    }
+
+    #nav:checked + .nav-btn i:nth-child(3) {
+        transform: translateY(-6px) rotate(90deg);
+    }
+
+    #nav:checked ~ .nav-wrapper {
+        z-index: 9990;
+        opacity: 1;
+    }
+
+    #nav:checked ~ .nav-wrapper ul li a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #nav:not(checked) + .nav-btn i {
+        transition: transform 0.5s ease;
+    }
+
+    #nav:not(checked) + .nav-btn i:nth-child(1) {
+        transform: translateY(-2px) rotate(-180px);
+        margin-top: 16px;
+    }
+
+    #nav:not(checked) + .nav-btn i:nth-child(2) {
+        transform: translateY(0px) rotate(-180deg);
+        opacity: 1;
+    }
+
+    #nav:not(checked) + .nav-btn i:nth-child(3) {
+        transform: translateY(0px) rotate(-180deg);  
+    }
+    /*  BURGER ANIMATION EFFECTS ~ END  */
+    /*  MOBILE MENU & NAVIGATION BAR ~ END  */
+}
+/*  MOBILE MENU ONLY ON DEVICES LESS THAN 1000px's WIDE ~ END  */
+/*  MOBILE MENU AND NAVIGATION BAR ~ END  */
+
+
+
+
 
 p {
     margin: 50px;
 }
+
+
+
+/********  FOOTER  ************/
+footer {
+    margin: 0;
+    padding: 0;
+    color: beige;
+    background: 
+        linear-gradient(
+            rgba(0, 79, 124, 0.9),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url(/images/BIG-Austin-Skyline-.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.footerwrapper {
+    padding: 0px 50px 0px 50px;
+}
+
+.footerTop {
+    display: flex;
+    margin: 50px;
+}
+
+.footerTestimonials {
+    color: white;
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.footerTestimonials h3 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 200;
+    margin-bottom: 0px;
+    letter-spacing: 1.5px;
+}
+
+.footerTestimonials hr {
+    color: coral;
+    border-style: solid;
+    width: 97.5%;
+    margin-left: 0px;
+}
+
+.footerTestimonials p {
+    margin: 0;
+    padding: 10px 0px;
+    font-size: 17.5px;
+}
+
+.footerContactUs {
+    color: white;
+    margin: 0;
+    padding: 50px 50px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.footerContactUs h3 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 200;
+    margin-bottom: 0px;
+    letter-spacing: 1.5px;
+}
+
+.footerContactUs hr {
+    color: coral;
+    border-style: solid;
+    width: 100%;
+}
+
+.footerContactUs h4 {
+    color: white;
+    white-space: nowrap;
+    letter-spacing: 1.2px;
+    font-size: 22px;
+    font-weight: 200;
+    margin: 0;
+    padding: 10px 0px;
+}
+
+.footerContactUs h4 span {
+    color: red;
+}
+
+.footerContactUs p {
+    margin: 0;
+    padding: 10px 0px;
+    font-size: 17.5px;
+    display: flex;
+}
+
+.footerContactUs #address span {
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-map-marker-alt {
+    padding-top: 10px;
+}
+
+.fa-envelope {
+    margin-left: -3px;
+}
+
+.footerContactUs p {
+    padding-top: 25px;
+}
+
+.footerContactUs p span {
+    margin-left: 25px;
+}
+
+.footerContactUs i {
+    font-size: 20px;
+}
+
+.email a {
+    text-decoration: none;
+    color: white;
+}
+
+.email a:hover {
+    color: aqua;
+}
+
+.email a span {
+    margin-left: 16px;
+}
+
+.connectWithUs {
+    margin-bottom: -25px;
+    padding: 0;
+}
+
+.connectWithUs ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.connectWithUs ul li {
+    padding: 5px;
+}
+
+.connectWithUs ul li a {
+    color: white;
+    opacity: .7;
+}
+
+.connectWithUs ul li a:hover {
+    color: aqua;
+    opacity: 1;
+}
+
+.footerMenu ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.footerMenu ul li:not(:first-child):before {
+    content: " | ";
+}
+
+.footerMenu ul li a {
+    color: beige;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.footerMenu ul li a:hover {
+    color: aqua;
+}
+
+.bottomFooter {
+    color: white;
+    width: 100%;
+    height: 75px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottomFooter span {
+    padding-right: 2.5px;
+}
+
+.bottomFooter a {
+    color: orangered;
+    padding-left: 2.5px;
+}
+
+.bottomFooter a:hover {
+    color: aqua;
+}
+
+
+/*  RESPONSIVE FOOTER FOR MOBILE DEVICES  */
+@media screen and (max-width: 780px) {
+
+    
+}
+/*  RESPONSIVE FOOTER FOR MOBILE DEVICES ~ END  */
+/********  FOOTER ~ END  ************/
