@@ -6,7 +6,7 @@ const navProperties = document.querySelector('.nav-inner');
 const navTop = nav.offsetTop;
 
 function fixNav() {
-    if (window.scrollY >= navTop) {
+    if (window.scrollY > navTop) {
         document.body.classList.add('sticky-nav');
         document.body.classList.add('nav-properties');
     }
@@ -45,3 +45,16 @@ const navSlide = () => {
 }
 navSlide();
 //  END ~ BURGER FUNCTIONALITY
+
+
+//  PARALLAX SLIDING IMAGES 
+$(window).scroll(function () {
+    parallax();
+})
+
+function parallax() {
+    var wScroll = $(window).scrollTop();
+
+    $('slide').css('background-position', 'center ' + (wScroll * .75) + 'px');  
+}
+//  END ~ PARALLAX SLIDING IMAGES

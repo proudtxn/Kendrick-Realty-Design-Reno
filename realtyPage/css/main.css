@@ -9,18 +9,20 @@ html, body {
 /*  DESKTOP MENU AND NAVIGATION BAR  */
 #navContainer {
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    z-index: 99;
+    position: relative;
 }
 
 .sticky-nav #navContainer {
     position: sticky;
     top: 0px;
+    padding: 0px;
 }
 
 .nav-inner {
     background-color: black;
-    border-radius: 50px;
-    margin: 20px;
+    border-radius: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +32,6 @@ html, body {
 .nav-properties .nav-inner {
     background-color: rgba(0, 0, 0, .9);
     border-radius: 0px;
-    margin: 0px;
     transition: all 300ms linear;
 }
 
@@ -77,6 +78,7 @@ html, body {
 
 .navbar-logo img {
     width: 200px;
+    height: auto;
 }
 
 #management a {
@@ -130,17 +132,21 @@ html, body {
 @media screen and (max-width: 999px) {
 
     /*  MOBILE MENU & NAVIGATION BAR  */
-    body {
-        overflow-x: hidden;
-        margin-top: 120px;
-    }
+
 
     #mobileNavContainer {
         background: black;
         width: 100%;
-        height: 100px;
-        position: fixed;
+        height: .01px;
+        position: relative;
         top: 0;
+        z-index: 99;
+    }
+
+    .inner {
+        position: fixed;
+        background: black;
+        width: 100%;
     }
 
     .logo a {
@@ -342,13 +348,104 @@ html, body {
 /*  MOBILE MENU ONLY ON DEVICES LESS THAN 1000px's WIDE ~ END  */
 /*  MOBILE MENU AND NAVIGATION BAR ~ END  */
 
+/*  MAIN CONTENT ~ SECTIONS  */
 
-
-
-
-p {
-    margin: 50px;
+/********  SLIDING IMAGES  ************/
+.container1 {
+    background-size: cover;
+    background-position: center;
+    background: #f9f9f9;
+    font-size: 24px;
 }
+
+
+slider {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #1f1f1f;
+    overflow: hidden;
+    position: absolute;
+    background-position: center;
+}
+
+slider > * {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    animation: slide 12s infinite;
+    overflow: hidden;
+}
+
+slide:nth-child(1) {
+    left: 0%;
+    animation-delay: -1s;
+    background-image: url(/images/realtyHomes/home1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(2) {
+    animation-delay: 2s;
+    background-image: url(/images/realtyHomes/home2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(3) {
+    animation-delay: 5s;
+    background-image: url(/images/realtyHomes/home3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(4) {
+    left: 0%;
+    animation-delay: 8s;
+    background-image: url(/images/realtyHomes/home4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+slide p {
+    font-family: Comfortaa;
+    font-size: 70px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 340px;
+    color: rgb(212, 41, 41);
+}
+
+@keyframes slide {
+    0% { left: 100%; width: 100%; }
+    5% { left: 0%; }
+    25% { left: 0%; }
+    30% { left: -100%; width: 100%; }
+    30.0001% { left: -100%; width: 0%; }
+    100% { left: 100%; width: 0%; }
+}
+
+.test {
+    bottom: 0px;
+    width: 100%;
+    height: 75px;
+    background-color: rgba(0, 42, 84, .5);
+    position: absolute;
+    z-index: 98;
+}
+/********  END ~ SLIDING IMAGES  ************/
+
+
+.filler {
+    margin: 50px;
+    margin-top: 700px;
+}
+
+/*  MAIN CONTENT ~ SECTIONS ~ END  */
+
 
 
 
@@ -495,33 +592,38 @@ footer {
     margin-left: 16px;
 }
 
-.connectWithUs {
+#connectWithUs {
     margin-bottom: -25px;
-    padding: 0;
 }
 
-.connectWithUs ul {
+#connectWithUs ul {
+    padding-right: 37px;
     display: flex;
     list-style: none;
     justify-content: center;
     font-size: 40px;
 }
 
-.connectWithUs ul li {
+#connectWithUs ul li {
     padding: 5px;
 }
 
-.connectWithUs ul li a {
+#connectWithUs ul li a {
     color: white;
     opacity: .7;
 }
 
-.connectWithUs ul li a:hover {
+#connectWithUs ul li a:hover {
     color: aqua;
     opacity: 1;
 }
 
+.footerMenu {
+    font-size: 15px;
+}
+
 .footerMenu ul {
+    padding-right: 37px;
     display: flex;
     list-style: none;
     justify-content: center;
@@ -541,7 +643,9 @@ footer {
     color: aqua;
 }
 
-.bottomFooter {
+#bottomFooter {
+    margin: 0;
+    padding: 0;
     color: white;
     width: 100%;
     height: 75px;
@@ -551,21 +655,29 @@ footer {
     align-items: center;
 }
 
-.bottomFooter span {
+#bottomFooter span {
     padding-right: 2.5px;
 }
 
-.bottomFooter a {
+#bottomFooter a {
     color: orangered;
     padding-left: 2.5px;
 }
 
-.bottomFooter a:hover {
+#bottomFooter a:hover {
     color: aqua;
 }
 
 
 /*  RESPONSIVE FOOTER FOR MOBILE DEVICES  */
+@media screen and (min-width: 1750px) {
+
+    .footerTop {
+        margin: 50px;
+        padding: 50px 250px;
+    }
+}
+
 @media screen and (max-width: 780px) {
 
     .footerTop {
@@ -598,6 +710,13 @@ footer {
     }
 }
 
+@media screen and (max-width: 700px) {
+
+    .footerMenu {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 500px) {
 
     .footerTestimonials h3 {
@@ -618,10 +737,6 @@ footer {
 
     .footerContactUs p {
         font-size: 12.5px;
-    }
-
-    .footerMenu {
-        display: none;
     }
 }
 /*  RESPONSIVE FOOTER FOR MOBILE DEVICES ~ END  */
