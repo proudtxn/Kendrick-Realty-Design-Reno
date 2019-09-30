@@ -661,6 +661,7 @@ footer {
 
 #bottomFooter a {
     color: orangered;
+    text-decoration: none;
     padding-left: 2.5px;
 }
 
