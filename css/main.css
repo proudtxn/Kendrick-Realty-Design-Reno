@@ -208,25 +208,47 @@ html, body {
     }
 
     .overlayRealty {
-        margin: -218px 5px;
+        margin-top: -200px;
         width: 200px;
         height: 200px;
     }
 
     .overlayDesign {
-        margin: -218px 5px;
+        margin-top: -200px;
         width: 200px;
         height: 200px;
     }
 
     .textRealty {
         font-size: 25px;
-        padding-top: 75px;
+        margin-top: 0px;
+        height: 200px;
+        width: 200px;
+    }
+
+    .textRealty p {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        text-align: center;
+        margin-top: 50px;  
     }
 
     .textDesign {
         font-size: 25px;
-        padding-top: 75px;
+        margin-top: 0px;
+        height: 200px;
+        width: 200px;
+    }
+
+    .textDesign p {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        text-align: center;
+        margin-top: 50px;  
     }
 }
 
@@ -242,26 +264,49 @@ html, body {
     }
 
     .overlayRealty {
-        margin: -168px 5px;
+        margin-top: -150px;
         width: 150px;
         height: 150px;
     }
 
     .overlayDesign {
-        margin: -168px 5px;
+        margin-top: -150px;
         width: 150px;
         height: 150px;
     }
 
     .textRealty {
-        font-size: 25px;
-        padding-top: 75px;
+        font-size: 20px;
+        margin-top: 0px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .textRealty p {
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        margin-top: 40px;
+        text-align: center;
+        position: absolute;
     }
 
     .textDesign {
-        font-size: 25px;
-        padding-top: 75px;
+        font-size: 20px;
+        margin-top: 0px;
+        width: 150px;
+        height: 150px;
     }
+
+    .textDesign p {
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        margin-top: 40px;
+        text-align: center;
+        position: absolute;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -280,25 +325,39 @@ html, body {
     }
 
     .overlayRealty {
-        margin: -218px 5px;
+        margin-top: -200px;
         width: 200px;
         height: 200px;
     }
 
     .overlayDesign {
-        margin: -218px 5px;
+        margin-top: -200px;
         width: 200px;
         height: 200px;
     }
 
     .textRealty {
-        font-size: 25px;
-        padding-top: 75px;
+        font-size: 22px;
+        margin-top: 0px;
+        height: 200px;
+        width: 200px;
+    }
+
+    .textRealty p {
+        margin-top: 60px;
+        width: 200px;
     }
 
     .textDesign {
-        font-size: 25px;
-        padding-top: 75px;
+        font-size: 22px;
+        margin-top: 0px;
+        height: 200px;
+        width: 200px;
+    }
+
+    .textDesign p {
+        margin-top: 60px;
+        width: 200px;
     }
 }
 
